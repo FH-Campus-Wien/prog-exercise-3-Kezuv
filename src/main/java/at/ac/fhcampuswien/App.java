@@ -1,7 +1,6 @@
 package at.ac.fhcampuswien;
 
-import java.util.Random;
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class App {
 
@@ -20,6 +19,20 @@ public class App {
         System.out.println();
         }
 
+
+        public static long[] lcg(long seed){
+            long m = 2147483648L;
+            long a = 1103515245L;
+            long c= 12345L;
+
+            long[] random_array ={(a*seed+c)%m};
+
+            System.out.println(Arrays.toString(random_array));
+
+            return random_array;
+
+
+        }
     public  static boolean swapArrays(int [] tabelle1, int [] tabelle2){
     if (tabelle1.length != tabelle2.length)
         return false;
@@ -29,6 +42,8 @@ public class App {
     // Implement all methods as public static
 
     public static void main(String[] args) {
+
+        lcg(12345);
         oneMonthCalendar(28, 7);
 
         int []tabelle1 = new int[10];
