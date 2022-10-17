@@ -77,73 +77,93 @@ public class App {
     if (tabelle1.length != tabelle2.length){
         return false;}
     else {
-        int zwischenspeicher;
-        for (int i = 0; i < tabelle1.length; i++) {
-            zwischenspeicher = tabelle1[i];
-            tabelle1[i] = tabelle2[i];
-            tabelle1[i] = zwischenspeicher;
+        for (int i =0; i<tabelle1.length;i++){
+            tabelle1[i] = tabelle1[i]^tabelle2[i];
+            tabelle2[i] = tabelle1[i]^tabelle2[i];
+            tabelle1[i]=tabelle1[i]^tabelle2[i];
+
         }
+        System.out.println("tabbele 1 nach tausch: "+Arrays.toString(tabelle1));
+        System.out.println("tabelle 2 nach taush: "+Arrays.toString(tabelle2));
         return true;
     }
     }
 
+    public static String camelCase(String input){
+        char[] camelcase = input.toCharArray();
+        int laenge = camelcase.length;
 
-    public static void checkDigit(int[]Array){
+        String loesung ="";
+
+       for (int i = 3; i <= camelcase.length; i++){
+
+           if (camelcase[i-3]==' '){
+
+               System.out.println(camelcase[i-2]-(char) 32);
+
+           } else System.out.println(camelcase[i-2]);
+
+       }
+
+
+
+        System.out.println(loesung);
+
+        return loesung;
+    }
+    public static int checkDigit(int[]Array){
 
         int sum = 0;
+        int gewichtung=2;
 
-        for (int i=0; i <= Array.length; i++){
-            sum = Array[i]+2;
+        for (int i=1; i <= Array.length; i++){
+            sum = sum + (Array[i-1]*gewichtung);
+            gewichtung++;
         }
         sum = sum%11;
+        sum = 11-sum;
 
         if (sum==10){
             sum=0;
         }
-        if (sum==1){
+        if (sum==11){
             sum=5;
         }
+        System.out.println(sum);
+        return sum;
     }
     // Implement all methods as public static
 
     public static void main(String[] args) {
 
         // Abruf Kalneder
-        oneMonthCalendar(31, 4);
+       // oneMonthCalendar(31, 4);
 
        // lcg Aufruf
 
-        System.out.println();
-        System.out.println();
-        System.out.println();
+       //System.out.println();
+       // System.out.println();
+       // System.out.println();
 
-        long [] randomnumbers = lcg(0);
+       // long [] randomnumbers = lcg(0);
 
-        for (int i=1; i <11 ; i++){
-            System.out.println(randomnumbers[i-1]);
-        }
+       // for (int i=1; i <11 ; i++){
+       //     System.out.println(randomnumbers[i-1]);
+       // }
 
         //Aufruf GuessingGame
-        guessingGame(randomNumberBetweenOneAndHundred());
+        //guessingGame(randomNumberBetweenOneAndHundred());
 
         // Abruf swapArrays
-        int[]Array1 = {10,20,30,40,50};
-        int[]Array2 = {100,90,80,70,60};
+       // int[]Array1 = {10,20,30,40,50};
+        //int[]Array2 = {100,90,80,70,60};
 
-        swapArrays(Array1, Array2);
-
-        System.out.println(Array1);
-        System.out.println(Array2);
+        //swapArrays(Array1, Array2);
         //Abruf checkDigit
+        //int[] input = new int[]{4, 0, 4, 4, 4, 8, 2, 9, 3};
+        //checkDigit(input);
 
-
-
-
-       // int []tabelle1 = new int[10];
-        //tabelle1[0] = 44;
-       // int [] tabelle2 = {4,3,2};
-       // boolean returnValue = swapArrays(new int[]{4,3,2}, new int[]{4});
-
+        camelCase("Was geht ab Mein liEbe TaUfEl");
 
        // String s = "asdfasdasd";
        // char[] text =s.toCharArray();
