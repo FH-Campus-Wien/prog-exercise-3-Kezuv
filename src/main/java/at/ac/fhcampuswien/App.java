@@ -70,7 +70,8 @@ public class App {
 
     public static int randomNumberBetweenOneAndHundred(){
         Random random = new Random();
-        return random.nextInt(100);
+        int randomnumber = random.nextInt(100)+1;
+        return randomnumber;
     }
 
     public  static boolean swapArrays(int []tabelle1, int tabelle2[]){
@@ -139,13 +140,8 @@ public class App {
         // Abruf Kalneder
         oneMonthCalendar(31, 4);
 
-       // lcg Aufruf
-
-       //System.out.println();
-       // System.out.println();
-       // System.out.println();
-
-       long [] randomnumbers = lcg(0);
+        //randomnumbers Abruf
+       long [] randomnumbers = lcg(79845);
 
        for (int i=1; i <11 ; i++){
            System.out.println(randomnumbers[i-1]);
@@ -159,14 +155,13 @@ public class App {
         int[]Array2 = {100,90,80,70,60};
 
         swapArrays(Array1, Array2);
+
         //Abruf checkDigit
         int[] input = new int[]{4, 0, 4, 4, 4, 8, 2, 9, 3};
         checkDigit(input);
 
         camelCase("Was geht ab Mein liEbe TaUfEl");
 
-       // String s = "asdfasdasd";
-       // char[] text =s.toCharArray();
         // test your method implementations here
         // make method calls
         // print their results
