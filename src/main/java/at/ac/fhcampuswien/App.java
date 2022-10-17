@@ -137,7 +137,7 @@ public class App {
     public static void main(String[] args) {
 
         // Abruf Kalneder
-       // oneMonthCalendar(31, 4);
+        oneMonthCalendar(31, 4);
 
        // lcg Aufruf
 
@@ -145,23 +145,23 @@ public class App {
        // System.out.println();
        // System.out.println();
 
-       // long [] randomnumbers = lcg(0);
+       long [] randomnumbers = lcg(0);
 
-       // for (int i=1; i <11 ; i++){
-       //     System.out.println(randomnumbers[i-1]);
-       // }
+       for (int i=1; i <11 ; i++){
+           System.out.println(randomnumbers[i-1]);
+        }
 
         //Aufruf GuessingGame
-        //guessingGame(randomNumberBetweenOneAndHundred());
+        guessingGame(randomNumberBetweenOneAndHundred());
 
         // Abruf swapArrays
-       // int[]Array1 = {10,20,30,40,50};
-        //int[]Array2 = {100,90,80,70,60};
+        int[]Array1 = {10,20,30,40,50};
+        int[]Array2 = {100,90,80,70,60};
 
-        //swapArrays(Array1, Array2);
+        swapArrays(Array1, Array2);
         //Abruf checkDigit
-        //int[] input = new int[]{4, 0, 4, 4, 4, 8, 2, 9, 3};
-        //checkDigit(input);
+        int[] input = new int[]{4, 0, 4, 4, 4, 8, 2, 9, 3};
+        checkDigit(input);
 
         camelCase("Was geht ab Mein liEbe TaUfEl");
 
